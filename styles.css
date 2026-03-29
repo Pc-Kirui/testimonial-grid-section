@@ -28,18 +28,43 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: var(--grey-100);
-  padding: 1.25rem 0;
+  /* padding: 1.25rem 0; */
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 0.8125rem;
   min-height: 100svh;
-  padding-bottom: 1.5rem;
+  /* padding-bottom: 1.5rem; */
 }
 
 main.container {
   flex: 1;
+  /* display: grid; */
+  align-content: center;
+  padding: 2rem 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.profile {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .profile img {
@@ -50,21 +75,38 @@ main.container {
   object-fit: cover;
 }
 
+.profile-info h3 {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.profile-info p {
+  font-size: 0.6875rem;
+  opacity: 0.5;
+}
+
 .container {
   display: grid;
   gap: 1.25rem;
   width: 85%;
+  max-width: 1110px;
   margin: 0 auto;
 }
 
 .card {
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 0.5rem;
+  box-shadow: 25px 25px 50px -10px rgba(0, 0, 0, 0.1);
 }
 
 .card-daniel {
   background-color: var(--purple-500);
   color: var(--white);
+  background-image: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top 0 right 15%;
+  position: relative;
 }
 
 .card-daniel .profile img {
@@ -105,18 +147,26 @@ main.container {
 }
 
 .testimonial-heading {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-block: 1rem;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .testimonial-body {
-  overflow: hidden;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.6;
   opacity: 0.7;
+  quotes: "“" "”";
+}
+
+.testimonial-body::before {
+  content: open-quote;
+}
+
+.testimonial-body::after {
+  content: close-quote;
 }
 
 .card-jeanette .testimonial-body,
@@ -125,44 +175,15 @@ main.container {
   opacity: 1;
 }
 
-.testimonial-body span {
-  position: relative;
-  z-index: 2;
-}
-
-.testimonial-body span::before {
-  content: "\201C";
-  position: absolute;
-  top: -1rem;
-  right: -0.5rem;
-  font-size: 6rem;
-  line-height: 1;
-  pointer-events: none;
-  font-family: Georgia, serif;
-  z-index: 0;
-}
-
 .card-daniel .testimonial-body::before,
 .card-patrick .testimonial-body::before,
 .card-jonathan .testimonial-body::before {
   color: var(--purple-300);
 }
 
-.profile {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.profile-info {
-  display: flex;
-  flex-direction: column;
-}
-
 footer {
-  margin-top: auto;
-  padding-bottom: 0.75rem;
+  padding: 1rem 0;
+  width: 100%;
 }
 
 .attribution {
@@ -172,6 +193,15 @@ footer {
 
 .attribution a {
   color: var(--blue);
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.attribution a:focus-visible {
+  outline: 2px dashed var(--purple-500);
+  outline-offset: 3px;
+  background-color: var(--purple-50);
 }
 
 @media (min-width: 768px) {
