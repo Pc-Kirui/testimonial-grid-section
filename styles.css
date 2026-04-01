@@ -103,7 +103,7 @@ main.container {
 .card-daniel {
   background-color: var(--purple-500);
   color: var(--white);
-  background-image: url(/images/bg-pattern-quotation.svg);
+  background-image: url(./images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
   background-position: top 0 right 15%;
   position: relative;
