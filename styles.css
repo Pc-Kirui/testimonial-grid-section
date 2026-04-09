@@ -29,26 +29,23 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--grey-100);
-  /* padding: 1.25rem 0; */
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 0.8125rem;
   min-height: 100svh;
-  /* padding-bottom: 1.5rem; */
 }
 
 main.container {
   flex: 1;
-  /* display: grid; */
   align-content: center;
   padding: 2rem 0;
 }
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.0625rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -68,8 +65,8 @@ main.container {
 }
 
 .profile img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   display: block;
   border-radius: 50%;
   object-fit: cover;
@@ -90,7 +87,7 @@ main.container {
   display: grid;
   gap: 1.25rem;
   width: 85%;
-  max-width: 1110px;
+  max-width: 69.375rem;
   margin: 0 auto;
 }
 
@@ -187,24 +184,24 @@ footer {
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-align: center;
 }
 
 .attribution a {
   color: var(--blue);
   text-decoration: none;
-  border-radius: 2px;
-  padding: 2px;
+  border-radius: 0.125rem;
+  padding: 0.125rem;
 }
 
 .attribution a:focus-visible {
   outline: 2px dashed var(--purple-500);
-  outline-offset: 3px;
+  outline-offset: 0.1875rem;
   background-color: var(--purple-50);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
